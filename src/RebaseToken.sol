@@ -89,8 +89,9 @@ contract RebaseToken is ERC20, Ownable, AccessControl {
         //Balance of the minted tokens: principal
         //Balance of the minted tokens plus Interest
         //no of tokens to be mintted for paying their Interest
-        s_userLastUpdatedTimestamp[_user] = block.timestamp;
+        
         _mint(_user, balanceIncrease);
+        s_userLastUpdatedTimestamp[_user] = block.timestamp;
     }
 
     /**
